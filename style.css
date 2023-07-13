@@ -96,6 +96,58 @@ nav a:hover {
   z-index: -1;
 }
 
+/*
+Тех. Поддержка
+*/
+
+#support-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ff0000;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 20px;
+  z-index: 1;
+}
+
+#support-widget {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  max-height: 300px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  display: none;
+}
+
+#support-content {
+  padding: 10px;
+}
+
+#support-input {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 10px;
+}
+
+#send-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff0000;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
 body,
 html {
   font-family: "Open Sans Condensed", sans-serif;

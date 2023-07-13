@@ -71,8 +71,18 @@
       <div class="bg"></div>
     </div>
     <canvas id="myChart"></canvas>
-    <div id="myChart">
-        
+    <div id="myChart"></div>
+
+    <button id="support-button"></button>
+
+    <div id="support-widget">
+      <div id="support-content">
+        <textarea
+          id="support-input"
+          placeholder="Напишите свое сообщение"
+        ></textarea>
+        <button id="send-button">Отправить</button>
+      </div>
     </div>
   </body>
   <script>
@@ -99,5 +109,22 @@
       data: data,
       options: {},
     });
+
+    document
+      .getElementById("support-button")
+      .addEventListener("click", function () {
+        document.getElementById("support-widget").style.display = "block";
+      });
+
+    document
+      .getElementById("send-button")
+      .addEventListener("click", function () {
+        var message = document.getElementById("support-input").value;
+        var encodedMessage = encodeURIComponent(message);
+        var whatsappURL =
+          "https://api.whatsapp.com/send?phone=+996703929850_WhatsApp&text=" +
+          encodedMessage;
+        window.open(whatsappURL, "_blank");
+      });
   </script>
 </html>
