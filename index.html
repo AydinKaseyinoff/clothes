@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Одежда</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <nav>
+        <ul>
+          <li>
+            <a href="/clothes.html">Одежда</a>
+          </li>
+          <li>
+            <a href="/cleaning.html">Хозтовары</a>
+          </li>
+          <li>
+            <a href="/children.html">Концтовары</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="product-cart">
+      <div class="shop-card">
+        <div class="title">Nike Metcon 2</div>
+        <div class="desc">Men's training shoe</div>
+        <div class="slider">
+          <figure data-color="#292a2f, #131519">
+            <img src="http://www.supah.it/dribbble/012/1.jpg" />
+          </figure>
+        </div>
+
+        <div class="cta">
+          <div class="price">$130</div>
+          <button class="btn">Add to cart<span class="bg"></span></button>
+        </div>
+      </div>
+
+      <div class="shop-card">
+        <div class="title">Nike Metcon 2</div>
+        <div class="desc">Men's training shoe</div>
+        <div class="slider">
+          <figure data-color="#292a2f, #131519">
+            <img src="http://www.supah.it/dribbble/012/1.jpg" />
+          </figure>
+        </div>
+
+        <div class="cta">
+          <div class="price">$130</div>
+          <button class="btn">Add to cart<span class="bg"></span></button>
+        </div>
+      </div>
+
+      <div class="shop-card">
+        <div class="title">Nike Metcon 2</div>
+        <div class="desc">Men's training shoe</div>
+        <div class="slider">
+          <figure data-color="#292a2f, #131519">
+            <img src="http://www.supah.it/dribbble/012/1.jpg" />
+          </figure>
+        </div>
+
+        <div class="cta">
+          <div class="price">$130</div>
+          <button class="btn">Add to cart<span class="bg"></span></button>
+        </div>
+      </div>
+      <div class="bg"></div>
+    </div>
+    <canvas id="myChart"></canvas>
+    <div id="myChart">
+        
+    </div>
+  </body>
+  <script>
+    // Получите контекст рисования графика
+    var ctx = document.getElementById("myChart").getContext("2d");
+
+    // Определите данные для графика (пример)
+    var data = {
+      labels: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл"],
+      datasets: [
+        {
+          label: "Продажи",
+          data: [120, 150, 145, 200, 220, 250, 245],
+          backgroundColor: "rgba(0, 123, 255, 0.5)", // Цвет заливки графика
+          borderColor: "rgba(0, 123, 255, 1)", // Цвет линии графика
+          borderWidth: 5, // Толщина линии графика
+        },
+      ],
+    };
+
+    // Создайте экземпляр графика
+    var myChart = new Chart(ctx, {
+      type: "line",
+      data: data,
+      options: {},
+    });
+  </script>
+</html>
