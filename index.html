@@ -73,7 +73,9 @@
     <canvas id="myChart"></canvas>
     <div id="myChart"></div>
 
-    <button id="support-button"></button>
+    <button id="support-button">
+      <img src="/img/support.png" alt="">
+    </button>
 
     <div id="support-widget">
       <div id="support-content">
@@ -85,46 +87,5 @@
       </div>
     </div>
   </body>
-  <script>
-    // Получите контекст рисования графика
-    var ctx = document.getElementById("myChart").getContext("2d");
-
-    // Определите данные для графика (пример)
-    var data = {
-      labels: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл"],
-      datasets: [
-        {
-          label: "Продажи",
-          data: [120, 150, 145, 200, 220, 250, 245],
-          backgroundColor: "rgba(0, 123, 255, 0.5)", // Цвет заливки графика
-          borderColor: "rgba(0, 123, 255, 1)", // Цвет линии графика
-          borderWidth: 5, // Толщина линии графика
-        },
-      ],
-    };
-
-    // Создайте экземпляр графика
-    var myChart = new Chart(ctx, {
-      type: "line",
-      data: data,
-      options: {},
-    });
-
-    document
-      .getElementById("support-button")
-      .addEventListener("click", function () {
-        document.getElementById("support-widget").style.display = "block";
-      });
-
-    document
-      .getElementById("send-button")
-      .addEventListener("click", function () {
-        var message = document.getElementById("support-input").value;
-        var encodedMessage = encodeURIComponent(message);
-        var whatsappURL =
-          "https://api.whatsapp.com/send?phone=+996703929850_WhatsApp&text=" +
-          encodedMessage;
-        window.open(whatsappURL, "_blank");
-      });
-  </script>
+  <script src="/index.js"></script>
 </html>
