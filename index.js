@@ -41,3 +41,29 @@ document.getElementById("send-button").addEventListener("click", function () {
     encodedMessage;
   window.open(whatsappURL, "_blank");
 });
+
+
+
+
+// JavaScript code
+document.addEventListener('DOMContentLoaded', function() {
+  // Getting all buy buttons
+  var buttons = document.querySelectorAll('.buy-button');
+
+  // Iterating over buttons and adding event listener
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      var product = this.dataset.product;
+      var price = this.dataset.price;
+      var image = this.dataset.image;
+
+      // Encoding the message
+      var message = encodeURIComponent('I want to buy: ' + product + '\nPrice: ' + price + '\nImage: ' + image);
+      var whatsappLink = 'https://wa.me/+996708338944/?text=' + message;
+
+      // Opening the WhatsApp link in a new tab
+      window.open(whatsappLink, '_blank');
+    });
+  });
+});
+
