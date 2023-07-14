@@ -37,7 +37,7 @@ document.getElementById("send-button").addEventListener("click", function () {
   var message = document.getElementById("support-input").value;
   var encodedMessage = encodeURIComponent(message);
   var whatsappURL =
-    "https://api.whatsapp.com/send?phone=+996708338944_WhatsApp&text=" +
+    "https://api.whatsapp.com/send?phone=+996703929850_WhatsApp&text=" +
     encodedMessage;
   window.open(whatsappURL, "_blank");
 });
