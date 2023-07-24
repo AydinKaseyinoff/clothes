@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Encoding the message
       var message = encodeURIComponent('I want to buy: ' + product + '\nPrice: ' + price + '\nImage: ' + image);
-      var whatsappLink = 'https://wa.me/+996708338944/?text=' + message;
+      var whatsappLink = 'https://wa.me/+996703929850/?text=' + message;
 
       // Opening the WhatsApp link in a new tab
       window.open(whatsappLink, '_blank');
