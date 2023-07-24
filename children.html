@@ -23,63 +23,95 @@
       </nav>
     </div>
     <div class="product-cart">
-        <div class="shop-card">
-          <div class="title">Nike Metcon 2</div>
-          <div class="desc">Men's training shoe</div>
-          <div class="slider">
-            <figure data-color="#292a2f, #131519">
-              <img src="http://www.supah.it/dribbble/012/4.jpg" />
-            </figure>
-          </div>
-  
-          <div class="cta">
-            <div class="price">$130</div>
-            <button class="btn">Add to cart<span class="bg"></span></button>
-          </div>
+      <div class="shop-card">
+        <div class="title">Детские трусы</div>
+        <div class="slider">
+          <figure data-color="#292a2f, #131519">
+            <img src="/img/photo_2023-07-24_13-49-02.jpg" alt="clothes" />
+          </figure>
         </div>
-  
-        <div class="shop-card">
-          <div class="title">Nike Metcon 2</div>
-          <div class="desc">Men's training shoe</div>
-          <div class="slider">
-            <figure data-color="#292a2f, #131519">
-              <img src="http://www.supah.it/dribbble/012/4.jpg" />
-            </figure>
-          </div>
-  
-          <div class="cta">
-            <div class="price">$130</div>
-            <button class="btn">Add to cart<span class="bg"></span></button>
-          </div>
+
+        <div class="cta">
+          <div class="desc">Размер: М</div>
+          <div class="desc">Производство: Фабричные"Пекин"</div>
+          <div class="desc">7шт</div>
+          <div class="price">120сом</div>
+          <button class="btn">Add to cart<span class="bg"></span></button>
         </div>
-  
-        <div class="shop-card">
-          <div class="title">Nike Metcon 2</div>
-          <div class="desc">Men's training shoe</div>
-          <div class="slider">
-            <figure data-color="#292a2f, #131519">
-              <img src="http://www.supah.it/dribbble/012/4.jpg" />
-            </figure>
-          </div>
-  
-          <div class="cta">
-            <div class="price">$130</div>
-            <button class="btn">Add to cart<span class="bg"></span></button>
-          </div>
-        </div>
-        <div class="bg"></div>
       </div>
 
+      <div class="shop-card">
+        <div class="title">Подростковые трусы</div>
+        <div class="slider">
+          <figure data-color="#292a2f, #131519">
+            <img src="/img/photo_2023-07-24_14-02-59.jpg" />
+          </figure>
+        </div>
 
-      <div id="support-widget">
-        <div id="support-content">
-          <textarea
-            id="support-input"
-            placeholder="Напишите свое сообщение"
-          ></textarea>
-          <button id="send-button">Отправить</button>
+        <div class="cta">
+          <div class="desc">Размер: L</div>
+          <div class="desc">Производство: Фабричные"Пекин"</div>
+          <div class="desc">22шт</div>
+          <div class="price">120сом</div>
+          <button class="btn">Add to cart<span class="bg"></span></button>
         </div>
       </div>
+
+      <div class="shop-card">
+        <div class="title">Nike Metcon 2</div>
+        <div class="desc">Men's training shoe</div>
+        <div class="slider">
+          <figure data-color="#292a2f, #131519">
+            <img src="http://www.supah.it/dribbble/012/4.jpg" />
+          </figure>
+        </div>
+
+        <div class="cta">
+          <div class="price">$130</div>
+          <button class="btn">Add to cart<span class="bg"></span></button>
+        </div>
+      </div>
+      <div class="bg"></div>
+    </div>
+
+    <div id="support-widget">
+      <div id="support-content">
+        <textarea
+          id="support-input"
+          placeholder="Напишите свое сообщение"
+        ></textarea>
+        <button id="send-button">Отправить</button>
+      </div>
+    </div>
   </body>
-  <script src="/index.js"></script>
+  <script>
+    // JavaScript code
+    document.addEventListener("DOMContentLoaded", function () {
+      // Getting all buy buttons
+      var buttons = document.querySelectorAll(".buy-button");
+
+      // Iterating over buttons and adding event listener
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var product = this.dataset.product;
+          var price = this.dataset.price;
+          var image = this.dataset.image;
+
+          // Encoding the message
+          var message = encodeURIComponent(
+            "I want to buy: " +
+              product +
+              "\nPrice: " +
+              price +
+              "\nImage: " +
+              image
+          );
+          var whatsappLink = "https://wa.me/+996708338944/?text=" + message;
+
+          // Opening the WhatsApp link in a new tab
+          window.open(whatsappLink, "_blank");
+        });
+      });
+    });
+  </script>
 </html>

@@ -25,19 +25,22 @@
 
     <div class="product-cart">
       <div class="shop-card">
-        <div class="title">Nike Metcon 2</div>
+        <div class="title">Футболка Аяна</div>
         <div class="desc">Men's training shoe</div>
         <div class="slider">
           <figure data-color="#292a2f, #131519">
             <img src="/photo_2023-07-13_13-08-32.jpg" />
           </figure>
         </div>
-
+    
         <div class="cta">
           <div class="price">$130</div>
-          <button class="btn">Add to cart<span class="bg"></span></button>
+          <!-- Add the WhatsApp button -->
+          <button class="buy-button" data-product="Nike Metcon 2" data-price="$130" data-image="/photo_2023-07-13_13-08-32.jpg">Buy Now</button>
         </div>
       </div>
+    </div>
+    
 
       <div class="shop-card">
         <div class="title">Nike Metcon 2</div>
@@ -81,5 +84,34 @@
       </div>
     </div>
   </body>
-  <script src="/index.js"></script>
+  <script>
+    // JavaScript code
+    document.addEventListener("DOMContentLoaded", function () {
+      // Getting all buy buttons
+      var buttons = document.querySelectorAll(".buy-button");
+
+      // Iterating over buttons and adding event listener
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var product = this.dataset.product;
+          var price = this.dataset.price;
+          var image = this.dataset.image;
+
+          // Encoding the message
+          var message = encodeURIComponent(
+            "I want to buy: " +
+              product +
+              "\nPrice: " +
+              price +
+              "\nImage: " +
+              image
+          );
+          var whatsappLink = "https://wa.me/+996708338944/?text=" + message;
+
+          // Opening the WhatsApp link in a new tab
+          window.open(whatsappLink, "_blank");
+        });
+      });
+    });
+  </script>
 </html>
